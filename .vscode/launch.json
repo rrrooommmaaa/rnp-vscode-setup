@@ -1,0 +1,422 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "rnpkeys VS",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\..\\x64-Debug\\src\\rnpkeys\\rnpkeys.exe",
+            "args": ["--list-key"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false
+        },
+        {
+            "name": "rnpkeys Windows",
+            "sourceFileMap": {
+                "/c/dev": "C:\\dev"
+            },
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\..\\msysbuild\\src\\rnpkeys\\rnpkeys.exe",
+            "args": [
+                "--homedir", "C:\\dev\\rnp_forks\\testhome",
+                "--userid= ", "--generate-key"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/../msysbuild",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/tools/msys64/usr/bin/gdb.exe"
+        },
+        {
+            "name": "certain test MSYS",
+            "sourceFileMap": {
+                "/c/dev": "C:\\dev"
+            },
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\..\\msysbuild\\src\\tests\\rnp_tests",
+            "args": [
+                "--gtest_filter=rnp_tests.test_cli_rnpkeys_unicode"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}\\..\\msysbuild\\src\\tests",
+            "environment": [
+                {
+                    "name": "RNP_TEST_DATA",
+                    "value": "${workspaceFolder}\\msysbuild\\src\\tests"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/tools/msys64/usr/bin/gdb.exe"
+        },
+        {
+            "name": "rnp Windows",
+            "sourceFileMap": {
+                "/c/dev": "C:\\dev"
+            },
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\..\\msysbuild\\src\\rnp\\rnp.exe",
+            "args": [
+                "--homedir", "C:\\Users\\rrroo\\AppData\\Local\\Temp\\rnpctmp_hk_1nkn\\.rnp",
+                "${workspaceFolder}\\src\\tests\\data\\test_messages\\message.txt", 
+                "--encrypt",
+                "--userid= ",
+                "--output", "C:\\dev\\rnp_forks\\output.enc"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/../msysbuild",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/tools/msys64/usr/bin/gdb.exe"
+        },
+        {
+            "name": "rnpkeys list-key",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/rnpkeys/rnpkeys",
+            "args": [
+                "--list-key"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "rnpkeys gen-key",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/rnpkeys/rnpkeys",
+            "args": [
+                "--numbits", "1024", 
+                "--pass-fd", "17", 
+                "--userid", "tracker1@rnp",
+                "--gen-key"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            //"preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "rnp",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/rnp/rnp",
+            "args": [
+                "--homedir", "/tmp/rnpctmpTJgSLy/.rnp",
+                "--decrypt", "/tmp/rnpctmpTJgSLy/cleartext.rnp", 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            //"preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "dump",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/examples/dump",
+            "args": [
+                "/home/osboxes/4g.bzip2.gpg"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "sign",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/examples/sign",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/src/examples",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "specific encrypt",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/src/rnp/rnp",
+            "args": [
+                "--homedir",
+                "/tmp/rnpctmpdyoCEk/.rnp",
+                "-r",
+                // "\\}\\{\\]\\[\\)\\^\\*\\.\\+\\(\\x09\\x0A\\|\\$@rnp",
+                "\\\\x5c[\\\\x7D][\\\\x7B][\\\\x5D][\\\\x5B][\\\\x29][\\\\x5E][\\\\x2A][\\\\x2E][\\\\x2B][\\\\x28][\\\\x09][\\\\x0A][\\\\x7C][\\\\x24]@rnp",
+                "--encrypt", "/home/osboxes/rnp_forks/rnp/src/tests/data/test_messages/message.txt",
+                // "--output", "/home/osboxes/encrypted_test.rnp"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            //"preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "certain test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../unixbuild/src/tests/rnp_tests",
+            "args": [
+                "--gtest_filter=rnp_tests.test_stream_signatures"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../unixbuild/src/tests",
+            "environment": [
+                {
+                    "name": "RNP_TEST_DATA",
+                    "value": "${workspaceFolder}/src/tests/data"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+//            "preLaunchTask": "make",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "python Encryption test",
+            "type": "python",
+            "request": "launch",
+            "python": "/usr/bin/python",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Encryption.test_encryption_weird_userids"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}/build/src/rnpkeys/rnpkeys",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}/build/src/rnp/rnp"
+            }            
+        },
+        {
+            "name": "python Windows Compression",
+            "type": "python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "request": "launch",
+            "python": "C:\\Users\\rrroo\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Compression.test_rnp_compression"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnpkeys\\rnpkeys.exe",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnp\\rnp.exe",
+                    "RNP_TESTS_GPGCONF_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpgconf.exe",
+                    "RNP_TESTS_GPG_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe",
+            }            
+        },
+        {
+            "name": "python Windows Enc test",
+            "type": "python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "request": "launch",
+            "python": "C:\\Users\\rrroo\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Encryption.test_encryption_weird_userids"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}\\..\\msysbuild\\src\\rnpkeys\\rnpkeys.exe",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}\\..\\msysbuild\\src\\rnp\\rnp.exe",
+                    "RNP_TESTS_GPGCONF_PATH": "C:\\dummy\\gpgconf.exe",
+                    "RNP_TESTS_GPG_PATH": "C:\\dummy\\gpg.exe",
+            }            
+        },
+        {
+            "name": "python Windows Misc test",
+            "type": "python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "request": "launch",
+            "python": "C:\\Users\\rrroo\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Misc.test_unicode_encryption"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnpkeys\\rnpkeys.exe",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnp\\rnp.exe",
+                    "RNP_TESTS_GPGCONF_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpgconf.exe",
+                    "RNP_TESTS_GPG_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe",
+            }            
+        },
+        {
+            "name": "python Windows Keystore test",
+            "type": "python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "request": "launch",
+            "python": "C:\\Users\\rrroo\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Keystore.test_generate_protection_password"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnpkeys\\rnpkeys.exe",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}\\..\\x64-Debug\\src\\rnp\\rnp.exe",
+                    "RNP_TESTS_GPGCONF_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpgconf.exe",
+                    "RNP_TESTS_GPG_PATH": "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe",
+            }            
+        },
+        {
+            "name": "python unixbuild Keystore test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Keystore.test_generate_protection_password"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}/../unixbuild/src/rnpkeys/rnpkeys",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}/../unixbuild/src/rnp/rnp"
+            }            
+        },
+        {
+            "name": "python escape test",
+            "type": "python",
+            "request": "launch",
+            "python": "/usr/bin/python2",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Keystore.test_userid_escape"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}/build/src/rnpkeys/rnpkeys",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}/build/src/rnp/rnp"
+            }            
+        },
+        {
+            "name": "python unixbuild Misc test",
+            "type": "python",
+            "request": "launch",
+            "python": "/usr/bin/python",
+            "program": "${workspaceFolder}/src/tests/cli_tests.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", "-d", "Misc.test_unicode_encryption"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                    "RNP_TESTS_RNPKEYS_PATH": "${workspaceFolder}/../unixbuild/src/rnpkeys/rnpkeys",
+                    "RNP_TESTS_RNP_PATH": "${workspaceFolder}/../unixbuild/src/rnp/rnp"
+            }            
+        }
+
+    ]
+}

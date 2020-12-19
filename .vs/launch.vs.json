@@ -1,0 +1,18 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "rnp.exe (src\\rnp\\rnp.exe)",
+      "name": "rnp.exe (src\\rnp\\rnp.exe)",
+      "args": [
+        "--symmetric",
+        "C:\\dev\\rnp_forks\\WINDOWS\\rnp\\src\\tests\\data\\test_messages\\message.txt",
+        "--output",
+        "C:\\dev\\rnp_forks\\WINDOWS\\rnp\\src\\tests\\data\\test_messages\\test.txt"
+      ]
+    }
+  ]
+}
